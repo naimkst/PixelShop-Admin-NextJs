@@ -94,7 +94,7 @@ function Charts() {
                 <div className="mt-8">
                     <div className="chartjs-size-monitor">
                         <div className="chartjs-size-monitor-expand">
-                            <div className />
+                            <div className="" />
                         </div>
                         <div className="chartjs-size-monitor-shrink">
                             <div className="" />

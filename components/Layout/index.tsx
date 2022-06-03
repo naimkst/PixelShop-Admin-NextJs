@@ -9,15 +9,11 @@ export default function Layout({ children }) {
       <div className="w-full h-full bg-[#f9f9f9]">
         <div className="flex flex-no-wrap">
           {/* Sidebar starts */}
-
               <Sidebar />
-
           {/* Sidebar ends */}
           <div className="w-full">
             {/* Navigation starts */}
-
             <Navigation />
-
             {/* Navigation ends */}
             {/* Remove class [ h-64 ] when adding a card block */}
             <div className="container mx-auto py-10 md:w-4/5 w-11/12 px-6">
