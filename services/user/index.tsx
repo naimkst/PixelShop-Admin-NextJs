@@ -6,16 +6,20 @@ export const userLogin = async (payload: any) => {
   return data;
 };
 
+//Register User
+export const createUser = async (payload: any) => {
+  console.log(payload)
+  const { data } = await request.post("user/register", payload);
+  return data;
+};
+
+
 export const getUser = async (skip: number, take: number, search: string) => {
   const { data } = await request.get(`auth/paginate?skip=${skip}&take=${take}&search=${search}`);
   return data;
 };
 
-export const createUser = async (payload: any) => {
-  console.log(payload)
-  const { data } = await request.post("auth/signup", payload);
-  return data;
-};
+
 
 export const getUserData = async (id: any) => {
   const { data } = await request.get("auth/user/" + id );
