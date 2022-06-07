@@ -26,6 +26,7 @@ function MyApp() {
       setLoding(false);
     } catch (error) {
       toast.error("Credentials are not correct");
+      setLoding(false);
     }
   };
 

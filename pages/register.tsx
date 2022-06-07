@@ -30,6 +30,7 @@ function MyApp() {
     } catch (error) {
       console.log(error);
       toast.error("Opsss! Something is wrong!");
+      setLoding(false);
     }
   };
   return (
