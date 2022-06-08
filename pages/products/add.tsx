@@ -24,9 +24,9 @@ function AddProduct() {
       const response = await createProduct({
         ...data,
       });
-      toast.success("Register Successfully");
+      toast.success("Product Add Successfully");
       setLoding(false);
-      router.push("/login");
+      router.push("/products");
       reset();
     } catch (error) {
       console.log(error);
@@ -287,12 +287,25 @@ text-base font-medium leading-none text-gray-600 group-hover:text-indigo-700 mt-
                     <p className="text-xl font-semibold leading-tight text-gray-800">
                       Meta Details
                     </p>
-                    <div className="grid w-full grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-7 mt-7 ">
+                    <div className="grid w-full grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-7 mt-7">
                       <div>
                         <p className="text-base font-medium leading-none text-gray-800">
                           Title
                         </p>
                         <input className="w-full p-3 mt-4 h-14 border border-gray-300 rounded outline-none focus:bg-gray-50" />
+                        <p className="mt-3 text-xs leading-3 text-gray-600">
+                          Set a simple and precise meta title
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-base font-medium leading-none text-gray-800">
+                          Price
+                        </p>
+                        <input
+                          type="number"
+                          className="w-full p-3 mt-4 border border-gray-300 rounded outline-none focus:bg-gray-50"
+                        />
                         <p className="mt-3 text-xs leading-3 text-gray-600">
                           Set a simple and precise meta title
                         </p>
@@ -325,22 +338,28 @@ text-base font-medium leading-none text-gray-600 group-hover:text-indigo-700 mt-
 
                       <div>
                         <p className="text-base font-medium leading-none text-gray-800">
-                          Price
+                          Status
                         </p>
-                        <input type="number" className="w-full p-3 mt-4 border border-gray-300 rounded outline-none focus:bg-gray-50" />
-                        <p className="mt-3 text-xs leading-3 text-gray-600">
-                          Set a simple and precise meta title
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-base font-medium leading-none text-gray-800">
-                          Meta Keywords
-                        </p>
-                        <input className="w-full p-3 mt-4 border border-gray-300 rounded outline-none focus:bg-gray-50" />
+                        {/*-Dropdown*/}
+
+                        <select
+                          className="
+                              relative flex mt-4 items-center justify-between w-full px-3 py-4 h-14 dropbtn-one
+                              border border-gray-300 rounded outline-none dropdown-one text-sm font-medium text-gray-600
+                              "
+                          aria-label="Default select example"
+                        >
+                          <option selected>Open this select menu</option>
+                          <option value="ACTIVE">Draft</option>
+                          <option value="INACTIVE">Publish</option>
+                        </select>
+
+                        {/* end */}
                         <p className="mt-3 text-xs leading-[15px] text-gray-600">
-                          Set words that are related to the product
+                          Set the product theme of your liking
                         </p>
                       </div>
+
                     </div>
                   </div>
                   <div className="pt-6 border-gray-300 mt-2 px-7">
@@ -456,6 +475,92 @@ text-base font-medium leading-none text-gray-600 group-hover:text-indigo-700 mt-
                   <p className="mt-3 text-xs leading-[15px] text-gray-600 px-7">
                     Enter product meta description for better understanding
                   </p>
+
+                  <div>
+                    <div className="flex mt-8 m-auto items-center justify-center">
+                      <div className="rounded-lg shadow-xl bg-gray-50 w-[70%]">
+                        <div className="m-4">
+                          <label className="inline-block mb-2 text-gray-500">
+                            Upload Image(jpg,png,svg,jpeg)
+                          </label>
+                          <div className="flex items-center justify-center w-full">
+                            <label className="flex flex-col w-full h-44 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300  items-center justify-center">
+                              <div className="flex flex-col items-center justify-center">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="w-12 h-12 text-gray-400 group-hover:text-gray-600"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                  Select a photo
+                                </p>
+                              </div>
+                              <input type="file" className="opacity-0" />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* end */}
+                    <p className="mt-3 text-xs leading-[15px] text-gray-600 flex justify-center">
+                      Set the product theme of your liking
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-base font-medium leading-none text-gray-800 flex items-center justify-center mt-14 mb-9">
+                      Feature Product
+                    </p>
+                    {/*-Dropdown*/}
+
+                    <div className="flex justify-center items-center gap-4">
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="inlineRadio1"
+                          value="option1"
+                        />
+                        <label
+                          className="form-check-label inline-block text-gray-800"
+                          htmlFor="inlineRadio10"
+                        >
+                          Feature Deactive
+                        </label>
+                      </div>
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="inlineRadio2"
+                          value="option2"
+                        />
+                        <label
+                          className="form-check-label inline-block text-gray-800"
+                          htmlFor="inlineRadio20"
+                        >
+                          Feature Active
+                        </label>
+                      </div>
+                     
+                    </div>
+
+                    {/* end */}
+                    {/* <p className="mt-3 text-xs leading-[15px] text-gray-600">
+                      Set the product theme of your liking
+                    </p> */}
+                  </div>
+
                   <hr className="h-[1px] bg-gray-100 my-14" />
                   <div className="flex flex-col flex-wrap items-center justify-center w-full px-7 lg:flex-row lg:justify-end md:justify-end gap-x-4 gap-y-4">
                     <button className="bg-white border-indigo-700 rounded hover:bg-gray-50 transform duration-300 ease-in-out text-sm font-medium px-6 py-4 text-indigo-700 border lg:max-w-[95px]  w-full ">
