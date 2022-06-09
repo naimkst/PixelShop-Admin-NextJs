@@ -25,10 +25,15 @@ function Index() {
   };
 
   const deleteHandle = async (id: number) => {
-    const response = await deleteById(id);
-    console.log(response);
-    setProduct(response);
-    toast.success("Delete Successfully");
+      try {
+        const response = await deleteById(id);
+        console.log(response);
+        setProduct(response);
+        toast.success("Delete Successfully");
+      } catch (error) {
+        toast.error("Something Wrong");
+      }
+
   };
 
   useEffect(() => {
