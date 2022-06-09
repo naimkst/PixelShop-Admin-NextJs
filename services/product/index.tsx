@@ -6,10 +6,17 @@ export const createProduct = async (payload: any) => {
   return data;
 };
 
-//Register User
-export const createUser = async (payload: any) => {
-  console.log(payload)
-  const { data } = await request.post("user/register", payload);
+//getProduct 
+export const getAlltData = async (skip: any, take: any, search: any) => {
+  const { data } = await request.get(`/product/paginate?skip=${skip}&take=${take}&search=${search}`);
   return data;
 };
+
+
+//Delete Data
+export const deleteById = async (id: number) => {
+  const { data } = await request.delete(`/product/delete/${id}`);
+  return data;
+};
+
 
