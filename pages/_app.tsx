@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
   return (
     <Layout>
+      <ToastContainer/>
       <Component {...pageProps} />
     </Layout>
   )

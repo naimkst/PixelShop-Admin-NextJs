@@ -112,9 +112,7 @@ function MyApp() {
                     </div> */}
 
               <div className="mt-5">
-                <lable className="text-sm font-medium leading-none text-gray-800">
-                  Email
-                </lable>
+                <p className="text-sm font-medium leading-none text-gray-800"> Email </p>
                 <input
                   aria-label="enter email adress"
                   role="input"
@@ -137,9 +135,9 @@ function MyApp() {
               )}
 
               <div className="mt-6  w-full">
-                <lable className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-sm font-medium leading-none text-gray-800">
                   Password
-                </lable>
+                </p>
                 <div className="relative flex items-center justify-center">
                   <input
                     aria-label="enter Password"
@@ -180,9 +178,9 @@ function MyApp() {
               )}
 
               <div className="mt-6  w-full">
-                <lable className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-sm font-medium leading-none text-gray-800">
                   Confirm Password
-                </lable>
+                </p>
                 <div className="relative flex items-center justify-center">
                   <input
                     aria-label="enter Password"
